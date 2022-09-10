@@ -18,6 +18,7 @@ class EasyImageViewerDismissibleDialog extends StatefulWidget {
   final Color backgroundColor;
   final String closeButtonTooltip;
   final Color closeButtonColor;
+  final Widget? additionalWidget;
 
   /// Refer to [showImageViewerPager] for the arguments
   const EasyImageViewerDismissibleDialog(this.imageProvider,
@@ -29,7 +30,9 @@ class EasyImageViewerDismissibleDialog extends StatefulWidget {
       this.swipeDismissible = false,
       required this.backgroundColor,
       required this.closeButtonTooltip,
-      required this.closeButtonColor})
+      required this.closeButtonColor,
+      this.additionalWidget,
+      })
       : super(key: key);
 
   @override
@@ -106,7 +109,8 @@ class _EasyImageViewerDismissibleDialogState
                           Navigator.of(context).pop();
                           _handleDismissal();
                         },
-                      ))
+                      )),
+                      widget.additionalWidget!,
                 ])));
 
     if (widget.swipeDismissible) {
