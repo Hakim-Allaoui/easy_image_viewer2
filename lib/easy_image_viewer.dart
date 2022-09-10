@@ -71,8 +71,9 @@ Future<Dialog?> showImageViewerPager(
     bool swipeDismissible = false,
     Color backgroundColor = _defaultBackgroundColor,
     String closeButtonTooltip = _defaultCloseButtonTooltip,
+    Widget? additionalWidget,
     Color closeButtonColor = _defaultCloseButtonColor,
-    Widget? additionalWidget,}) {
+    }) {
   if (immersive) {
     // Hide top and bottom bars
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
